@@ -16,13 +16,8 @@ public class Pena extends Lutador {
      * @param nacionalidade Nacionalidade do lutador.
      * @param golpe         Força do golpe do lutador.
      * @param defesa        Capacidade de defesa do lutador.
-     * @param pontuacao     Pontuação do lutador.
-     * @param numVitorias   Número de vitórias do lutador.
-     * @param numDerrotas   Número de derrotas do lutador.
      */
-    public Pena(String nome, String categoria, Double peso, String apelido, String nacionalidade, int golpe, int defesa,
-                int pontuacao, int numVitorias, int numDerrotas) {
-        super(nome, categoria, peso, apelido, nacionalidade, golpe, defesa, pontuacao, numVitorias, numDerrotas);
-        // TODO Auto-generated constructor stub
+    public Pena(String nome, String categoria, String apelido, String nacionalidade,  Double peso, int golpe, int defesa) {
+        super(nome, categoria, apelido, nacionalidade, peso, golpe, defesa);
     }
 }

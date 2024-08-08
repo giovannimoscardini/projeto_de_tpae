@@ -8,41 +8,30 @@ public abstract class Lutador {
 
     protected String nome;
     protected String categoria;
-    protected Double peso;
     protected String apelido;
     protected String nacionalidade;
+    protected Double peso;
     protected int golpe;
     protected int defesa;
-    private int pontuacao;
-    private int numVitorias;
-    private int numDerrotas;
-
     /**
      * Construtor da classe Lutador.
      *
      * @param nome          Nome do lutador.
      * @param categoria     Categoria do lutador.
-     * @param peso          Peso do lutador.
      * @param apelido       Apelido do lutador.
      * @param nacionalidade Nacionalidade do lutador.
+     * @param peso          Peso do lutador.
      * @param golpe         Força do golpe do lutador.
      * @param defesa        Capacidade de defesa do lutador.
-     * @param pontuacao     Pontuação do lutador.
-     * @param numVitorias   Número de vitórias do lutador.
-     * @param numDerrotas   Número de derrotas do lutador.
      */
-    public Lutador(String nome, String categoria, Double peso, String apelido, String nacionalidade, int golpe,
-                   int defesa, int pontuacao, int numVitorias, int numDerrotas) {
+    public Lutador(String nome, String categoria, String apelido, String nacionalidade, Double peso, int golpe, int defesa) {
         this.nome = nome;
         this.categoria = categoria;
-        this.peso = peso;
         this.apelido = apelido;
         this.nacionalidade = nacionalidade;
+        this.peso = peso;
         this.golpe = golpe;
         this.defesa = defesa;
-        this.pontuacao = pontuacao;
-        this.numVitorias = numVitorias;
-        this.numDerrotas = numDerrotas;
     }
 
     /**
@@ -100,6 +89,15 @@ public abstract class Lutador {
     }
 
     /**
+     * Obtém a nacionalidade do lutador.
+     *
+     * @return Nacionalidade do lutador.
+     */
+    public String getNacionalidade() { 
+        return nacionalidade; 
+    }
+
+    /**
      * Define a nova capacidade de defesa do lutador após receber dano.
      *
      * @param dano Dano recebido pelo lutador.
@@ -109,32 +107,5 @@ public abstract class Lutador {
         if (this.defesa < 0) {
             this.defesa = 0;
         }
-    }
-
-    /**
-     * Obtém a pontuação do lutador.
-     *
-     * @return Pontuação do lutador.
-     */
-    public int getPontuacao() {
-        return pontuacao;
-    }
-
-    /**
-     * Obtém o número de vitórias do lutador.
-     *
-     * @return Número de vitórias do lutador.
-     */
-    public int getNumVitorias() {
-        return numVitorias;
-    }
-
-    /**
-     * Obtém o número de derrotas do lutador.
-     *
-     * @return Número de derrotas do lutador.
-     */
-    public int getNumDerrotas() {
-        return numDerrotas;
     }
 }

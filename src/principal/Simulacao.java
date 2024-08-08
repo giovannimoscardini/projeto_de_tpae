@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Scanner;
 
 /**
- * Simulação Karatê Paris 2024 com diferentes categorias.
+ * Simulação Boxe Paris 2024 com diferentes categorias.
  * Esta classe gerencia a inicialização dos dados da competição, a realização de batalhas
  * em cada categoria e a determinação dos vencedores em cada etapa.
  */
