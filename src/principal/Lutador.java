@@ -108,7 +108,13 @@ public abstract class Lutador {
             this.defesa = 0;
         }
     }
-
+    
+    /**
+     * Retorna uma representação em string do lutador.
+     *
+     * @return Uma string que representa o lutador, incluindo nome, categoria, apelido, nacionalidade, peso,
+     *         força do golpe e capacidade de defesa.
+     */
 	@Override
 	public String toString() {
 		return "Lutador [nome=" + nome + ", categoria=" + categoria + ", apelido=" + apelido + ", nacionalidade="

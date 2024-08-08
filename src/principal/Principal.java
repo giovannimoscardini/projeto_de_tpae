@@ -118,7 +118,7 @@ public class Principal {
                     case 5 -> System.out.println("Saindo...");
                     default -> System.out.println("Opção inválida. Tente novamente.");
                 }
-            } while (opcao != 4);
+            } while (opcao != 5);
         }
     }
     

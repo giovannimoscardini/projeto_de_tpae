@@ -18,6 +18,7 @@ public class Simulacao {
     /** Lista de categorias de luta */
     List<String> categorias = new ArrayList<>();
     
+    /** Mapa para armazenar lutadores por nome */
     HashMap<String, Lutador> lutadoresHash = new HashMap<>();
 
     /** Scanner para leitura de entradas do usuário */
@@ -44,46 +45,48 @@ public class Simulacao {
         categorias.add("SUPERPESADO");
 
         // Categoria PENA
-        lutadores.add(new Pena("Eldar Gasanov", "PENA", "O Combativo", "Azerbaijano", 59.0, 85, 78));
-        lutadores.add(new Pena("Buse Naz Cakiroglu", "PENA", "A Veloz", "Turca", 58.0, 87, 80));
-        lutadores.add(new Pena("Hifumi Abe", "PENA", "O Agil", "Japones", 60.0, 89, 82));
-        lutadores.add(new Pena("Nina Dascalu", "PENA", "A Determinada", "Romena", 61.0, 84, 76));
-        lutadores.add(new Pena("Erika Kasahara", "PENA", "A Fera", "Japones", 59.0, 86, 79));
-        lutadores.add(new Pena("Jamal Abdurrahman", "PENA", "O Resiliente", "Jordaniano", 60.0, 83, 77));
-        lutadores.add(new Pena("Jovana Prekovic", "PENA", "A Precisao", "Servia", 60.0, 88, 81));
-        lutadores.add(new Pena("Fatih Keles", "PENA", "O Habilidoso", "Turco", 62.0, 90, 82));
+        lutadores.add(new Pena("Munarbek Seiitbek Uulu", "PENA", "SEIITBEK UULU", "Quirguiz", 56.5, 79, 74));
+        lutadores.add(new Pena("Carlo Paalam", "PENA", "PAALAM", "Filipino", 57.0, 84, 79));
+        lutadores.add(new Pena("Makhmud Sabyrkhan", "PENA", "SABYRKHAN", "Cazaque", 57.0, 82, 78));
+        lutadores.add(new Pena("Jose Quiles Brotons", "PENA", "QUILES BROTONS", "Espanhol", 56.3, 75, 70));
+        lutadores.add(new Pena("Jahmal Harvey", "PENA", "HARVEY", "Americano", 56.7, 83, 77));
+        lutadores.add(new Pena("Luiz Gabriel Oliveira", "PENA", "OLIVEIRA", "Brasileiro", 56.5, 78, 72));
+        lutadores.add(new Pena("Vasile Usturoi", "PENA", "USTUROI", "Belga", 57.0, 80, 75));
+        lutadores.add(new Pena("Charlie Senior", "PENA", "SENIOR", "Australiano", 56.2, 81, 76));
 
         // Categoria MEDIO
-        lutadores.add(new Medio("Shinya Abe", "MEDIO", "O Forte", "Japones", 72.0, 102, 90));
-        lutadores.add(new Medio("Ryo Kiyuna", "MEDIO", "O Tecnico", "Japones", 75.0, 108, 92));
-        lutadores.add(new Medio("Sandra Sanchez", "MEDIO", "A Tecnica", "Espanhola", 74.0, 104, 88));
-        lutadores.add(new Medio("Aline Silva", "MEDIO", "A Estrategica", "Brasileira", 76.0, 110, 91));
-        lutadores.add(new Medio("Ahmad Abouelfetouh", "MEDIO", "O Agil", "Egipcio", 74.0, 105, 87));
-        lutadores.add(new Medio("Lucas Melo", "MEDIO", "O Focado", "Brasileiro", 75.0, 107, 89));
-        lutadores.add(new Medio("Ivan Kostic", "MEDIO", "O Habil", "Servio", 76.0, 109, 90));
-        lutadores.add(new Medio("Gonzalo Rodriguez", "MEDIO", "O Agitado", "Argentino", 77.0, 111, 92));
+        lutadores.add(new Medio("Hebert Conceicao", "MEDIO", "HEBERT", "Brasileiro", 74.3, 102, 90));
+        lutadores.add(new Medio("Arlen Lopez", "MEDIO", "LOPEZ", "Cubano", 74.2, 108, 92));
+        lutadores.add(new Medio("Oleksandr Khyzhniak", "MEDIO", "KHYZHNIAK", "Ucraniano", 75.0, 104, 88));
+        lutadores.add(new Medio("Gleb Bakshi", "MEDIO", "BAKSHI", "Russo", 75.0, 110, 91));
+        lutadores.add(new Medio("Eumir Marcial", "MEDIO", "MARCIAL", "Filipino", 75.0, 105, 87));
+        lutadores.add(new Medio("Troy Isley", "MEDIO", "ISLEY", "Americano", 74.6, 107, 89));
+        lutadores.add(new Medio("Yuito Moriwaki", "MEDIO", "MORIWAKI", "Japonês", 75.0, 109, 90));
+        lutadores.add(new Medio("Aidan Walsh", "MEDIO", "WALSH", "Irlandês", 74.5, 111, 92));
+
 
         // Categoria PESADO
-        lutadores.add(new Pesado("Ferydoon Shahraki", "PESADO", "O Poderoso", "Iraniano", 98.0, 115, 95));
-        lutadores.add(new Pesado("Wen Wen", "PESADO", "O Agil", "Chines", 100.0, 113, 92));
-        lutadores.add(new Pesado("Cristhian Pino", "PESADO", "O Habilidoso", "Colombiano", 102.0, 118, 90));
-        lutadores.add(new Pesado("Gokhan Saki", "PESADO", "O Forte", "Turco", 104.0, 120, 94));
-        lutadores.add(new Pesado("Junya Watanabe", "PESADO", "O Determinado", "Japones", 100.0, 114, 93));
-        lutadores.add(new Pesado("Luis Beltran", "PESADO", "O Feroz", "Mexicano", 103.0, 117, 91));
-        lutadores.add(new Pesado("Aldo Silva", "PESADO", "O Rapido", "Brasileiro", 101.0, 116, 90));
-        lutadores.add(new Pesado("Martin Valdes", "PESADO", "O Imbativel", "Argentino", 105.0, 119, 94));
+        lutadores.add(new Pesado("Bakhodir Jalolov", "PESADO", "JALOLOV", "Uzbeque", 91.0, 8, 8));
+        lutadores.add(new Pesado("Richard Torrez Jr.", "PESADO", "TORREZ", "Americano", 91.0, 7, 6));
+        lutadores.add(new Pesado("Frazer Clarke", "PESADO", "CLARKE", "Britânico", 91.0, 6, 5));
+        lutadores.add(new Pesado("Kamshybek Kunkabayev", "PESADO", "KUNKABAYEV", "Cazaque", 91.0, 5, 4));
+        lutadores.add(new Pesado("Justis Huni", "PESADO", "HUNI", "Australiano", 91.0, 4, 4));
+        lutadores.add(new Pesado("David Nyika", "PESADO", "NYIKA", "Neozelandês", 91.0, 3, 3));
+        lutadores.add(new Pesado("Emmanuel Reyes", "PESADO", "REYES", "Espanhol", 91.0, 2, 2));
+        lutadores.add(new Pesado("Abner Teixeira", "PESADO", "TEIXEIRA", "Brasileiro", 91.0, 1, 1));
+
 
         // Categoria SUPERPESADO
-        lutadores.add(new Superpesado("Milad Beigi", "SUPERPESADO", "O Gigante", "Iraniano", 110.0, 130, 105));
-        lutadores.add(new Superpesado("Zhao Lei", "SUPERPESADO", "O Forte", "Chines", 112.0, 132, 108));
-        lutadores.add(new Superpesado("Carlos Bante", "SUPERPESADO", "O Imbativel", "Brasileiro", 115.0, 135, 110));
-        lutadores.add(new Superpesado("Saeid Mollaei", "SUPERPESADO", "O Estrategista", "Iraniano", 113.0, 133, 109));
-        lutadores.add(new Superpesado("Arthur Correia", "SUPERPESADO", "O Resistente", "Brasileiro", 117.0, 138, 112));
-        lutadores.add(new Superpesado("Egor Olegovich", "SUPERPESADO", "O Poderoso", "Russo", 118.0, 140, 115));
-        lutadores.add(new Superpesado("Tomohiro Matsumoto", "SUPERPESADO", "O Feroz", "Japones", 116.0, 137, 114));
-        lutadores.add(new Superpesado("Pablo Ruiz", "SUPERPESADO", "O Veloz", "Espanhol", 119.0, 139, 116));
-        
-        
+        lutadores.add(new Superpesado("Bakhodir Jalolov", "SUPERPESADO", "JALOLOV", "Uzbeque", 91.0, 8, 8));
+        lutadores.add(new Superpesado("Richard Torrez Jr.", "SUPERPESADO", "TORREZ", "Americano", 91.0, 7, 6));
+        lutadores.add(new Superpesado("Frazer Clarke", "SUPERPESADO", "CLARKE", "Britânico", 91.0, 6, 5));
+        lutadores.add(new Superpesado("Kamshybek Kunkabayev", "SUPERPESADO", "KUNKABAYEV", "Cazaque", 91.0, 5, 4));
+        lutadores.add(new Superpesado("Justis Huni", "SUPERPESADO", "HUNI", "Australiano", 91.0, 4, 4));
+        lutadores.add(new Superpesado("David Nyika", "SUPERPESADO", "NYIKA", "Neozelandês", 91.0, 3, 3));
+        lutadores.add(new Superpesado("Emmanuel Reyes", "SUPERPESADO", "REYES", "Espanhol", 91.0, 2, 2));
+        lutadores.add(new Superpesado("Abner Teixeira", "SUPERPESADO", "TEIXEIRA", "Brasileiro", 91.0, 1, 1));
+
+    
         for(Lutador lutador : lutadores) {
         	lutadoresHash.put(lutador.getNome(), lutador);
         }
@@ -106,6 +109,12 @@ public class Simulacao {
         }
     }
     
+    /**
+     * Busca um lutador pelo nome.
+     * 
+     * @param nome Nome do lutador a ser buscado.
+     * @return O lutador correspondente ao nome fornecido, ou {@code null} se não encontrado.
+     */
     public Lutador buscarLutador(String nome) {
     	return lutadoresHash.get(nome);
     }
