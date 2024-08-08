@@ -104,43 +104,45 @@ public class Simulacao {
      * @param scanner Scanner para leitura da entrada do usuário.
      */
     public void adicionarLutador(Scanner scanner) {
-        System.out.println("Digite o nome do lutador:");
+        System.out.print("Digite o nome do lutador: ");
         String nome = scanner.nextLine();
 
         System.out.println("Digite a categoria do lutador (PENA, MEDIO, PESADO, SUPERPESADO):");
         String categoria = scanner.nextLine().toUpperCase();
 
-        System.out.println("Digite o apelido do lutador:");
+        System.out.print("Digite o apelido do lutador: ");
         String apelido = scanner.nextLine();
 
-        System.out.println("Digite a nacionalidade do lutador:");
+        System.out.print("Digite a nacionalidade do lutador: ");
         String nacionalidade = scanner.nextLine();
 
-        System.out.println("Digite o peso do lutador:");
-        int peso = scanner.nextInt();
+        System.out.print("Digite o peso do lutador: ");
+        double peso = scanner.nextDouble();
 
-        System.out.println("Digite o golpe do lutador:");
+        System.out.print("Digite o golpe do lutador: ");
         int golpe = scanner.nextInt();
 
-        System.out.println("Digite a defesa do lutador:");
+        System.out.print("Digite a defesa do lutador: ");
         int defesa = scanner.nextInt();
-        scanner.nextLine(); // Consumir o newline após a leitura do número
+        scanner.nextLine();
+        
+        Lutador lutador;
 
-        Lutador novoLutador;
         switch (categoria) {
-            case "PENA" -> novoLutador = new Pena(nome, categoria, apelido, nacionalidade, peso, golpe, defesa);
-            case "MEDIO" -> novoLutador = new Medio(nome, categoria, apelido, nacionalidade, peso, golpe, defesa);
-            case "PESADO" -> novoLutador = new Pesado(nome, categoria, apelido, nacionalidade, peso, golpe, defesa);
-            case "SUPERPESADO" -> novoLutador = new Superpesado(nome, categoria, apelido, nacionalidade, peso, golpe, defesa);
+            case "PENA" -> lutador = new Pena(nome, categoria, apelido, nacionalidade, peso, golpe, defesa);
+            case "MEDIO" -> lutador = new Medio(nome, categoria, apelido, nacionalidade, peso, golpe, defesa);
+            case "PESADO" -> lutador = new Pesado(nome, categoria, apelido, nacionalidade, peso, golpe, defesa);
+            case "SUPERPESADO" -> lutador = new Superpesado(nome, categoria, apelido, nacionalidade, peso, golpe, defesa);
             default -> {
-                System.out.println("Categoria inválida. Lutador não adicionado.");
+                System.out.println("Categoria inválida!");
                 return;
             }
         }
 
-        lutadores.add(novoLutador);
+        lutadores.add(lutador);
         System.out.println("Lutador adicionado com sucesso!");
     }
+
 
     /**
      * Retorna uma lista de lutadores que pertencem a uma categoria específica.
@@ -256,7 +258,7 @@ public class Simulacao {
             int defesa2Original = lutador2.getDefesa();
     
             Luta luta = new Luta(lutador1, lutador2);
-            Lutador resultado = luta.lutar();
+            Lutador resultado = luta.Lutar();
     
             if (resultado != null) {
                 vencedores.add(resultado);
