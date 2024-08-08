@@ -108,4 +108,10 @@ public abstract class Lutador {
             this.defesa = 0;
         }
     }
+
+	@Override
+	public String toString() {
+		return "Lutador [nome=" + nome + ", categoria=" + categoria + ", apelido=" + apelido + ", nacionalidade="
+				+ nacionalidade + ", peso=" + peso + ", golpe=" + golpe + ", defesa=" + defesa + "]";
+	}
 }

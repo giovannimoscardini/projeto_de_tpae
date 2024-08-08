@@ -2,6 +2,7 @@ package principal;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Scanner;
 
@@ -16,6 +17,8 @@ public class Simulacao {
 
     /** Lista de categorias de luta */
     List<String> categorias = new ArrayList<>();
+    
+    HashMap<String, Lutador> lutadoresHash = new HashMap<>();
 
     /** Scanner para leitura de entradas do usuário */
     private final Scanner scanner = new Scanner(System.in);
@@ -79,6 +82,11 @@ public class Simulacao {
         lutadores.add(new Superpesado("Egor Olegovich", "SUPERPESADO", "O Poderoso", "Russo", 118.0, 140, 115));
         lutadores.add(new Superpesado("Tomohiro Matsumoto", "SUPERPESADO", "O Feroz", "Japones", 116.0, 137, 114));
         lutadores.add(new Superpesado("Pablo Ruiz", "SUPERPESADO", "O Veloz", "Espanhol", 119.0, 139, 116));
+        
+        
+        for(Lutador lutador : lutadores) {
+        	lutadoresHash.put(lutador.getNome(), lutador);
+        }
     }
 
     /**
@@ -90,14 +98,19 @@ public class Simulacao {
         System.out.println("\nInformações dos Lutadores:");
         for (Lutador lutador : lutadores) {
             if (categoria.isEmpty() || lutador.getCategoria().equals(categoria)) {
-                System.out.printf("Nome: %s%nCategoria: %s%nApelido: %s%nNacionalidade: %s%nPeso: %.2f%nGolpe: %d%nDefesa: %d%n",
+                System.out.printf("Nome: %s%nCategoria: %s%nApelido: %s%nNacionalidade: %s%nPeso: %.2f%nGolpe: %d%n",
                         lutador.getNome(), lutador.getCategoria(), lutador.getApelido(),
                         lutador.getNacionalidade(), lutador.getPeso(), lutador.getGolpe(), lutador.getDefesa());
                 System.out.println("-------------------------------");
             }
         }
     }
-
+    
+    public Lutador buscarLutador(String nome) {
+    	return lutadoresHash.get(nome);
+    }
+    
+    
     /**
      * Adiciona um novo lutador à lista de lutadores.
      * 
@@ -140,6 +153,7 @@ public class Simulacao {
         }
 
         lutadores.add(lutador);
+        lutadoresHash.put(nome, lutador);
         System.out.println("Lutador adicionado com sucesso!");
     }
 

@@ -26,8 +26,9 @@ public class Principal {
                 System.out.println("Escolha uma opção:");
                 System.out.println("1. Adicionar Lutador");
                 System.out.println("2. Mostrar Informações dos Lutadores");
-                System.out.println("3. Realizar Competição");
-                System.out.println("4. Sair");
+                System.out.println("3. Bucar Informações de um Lutador Específico por Nome");
+                System.out.println("4. Realizar Competição");
+                System.out.println("5. Sair");
                 opcao = scanner.nextInt();
                 scanner.nextLine(); 
                 
@@ -58,6 +59,28 @@ public class Principal {
                         simulacao.infoLutadores(categoria);
                     }
                     case 3 -> {
+                    	System.out.println("Digite o nome do lutador: ");
+                    	String pugilista = scanner.nextLine();
+                    	Lutador resultado = simulacao.buscarLutador(pugilista);
+                    	
+                    	if (resultado != null) {
+                    		System.out.println("-------------------------------");
+                        	System.out.println("Lutador Encontrado!");
+                        	System.out.println("-------------------------------");
+                        	System.out.printf("Nome: %s%n",resultado.getNome());
+                        	System.out.printf("Categoria: %s%n",resultado.getCategoria());
+                        	System.out.printf("Apelido: %s%n",resultado.getApelido());
+                        	System.out.printf("Nacionalidade: %s%n",resultado.getNacionalidade());
+                        	System.out.printf("Peso: %.2f%n",resultado.getPeso());
+                        	System.out.printf("Golpe: %d%n",resultado.getGolpe());
+                        	System.out.printf("Defesa: %d%n",resultado.getGolpe());
+                            System.out.println("-------------------------------");
+                    	}
+                    	else {
+                    		System.out.println("Lutador não encontrado.");
+                    	}
+                    }
+                    case 4 -> {
                         System.out.println("Escolha a categoria para a competição:");
                         System.out.println("1. PENA");
                         System.out.println("2. MEDIO");
@@ -92,7 +115,7 @@ public class Principal {
                             System.out.println("Ainda há um número ímpar de lutadores na categoria " + categoriaCompeticao + ". Competição não realizada.");
                         }
                     }
-                    case 4 -> System.out.println("Saindo...");
+                    case 5 -> System.out.println("Saindo...");
                     default -> System.out.println("Opção inválida. Tente novamente.");
                 }
             } while (opcao != 4);
